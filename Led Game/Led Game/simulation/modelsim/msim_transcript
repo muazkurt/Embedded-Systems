@@ -1,0 +1,44 @@
+# Reading D:/altera/13.1/modelsim_ase/tcl/vsim/pref.tcl 
+# do LedGame_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\altera\13.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\altera\13.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+D:/Projects/EMBEDDED/HW/Led\ Game/Led\ Game/Modules/Status {D:/Projects/EMBEDDED/HW/Led Game/Led Game/Modules/Status/Status.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Status
+# 
+# Top level modules:
+# 	Status
+# 
+vlog -reportprogress 300 -work work {D:/Projects/EMBEDDED/HW/Led Game/Led Game/Tests/Status_Test.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Status_Test
+# 
+# Top level modules:
+# 	Status_Test
+vsim work.Status_Test
+# vsim work.Status_Test 
+# Loading work.Status_Test
+# Loading work.Status
+add wave -position insertpoint  \
+sim:/Status_Test/_current \
+sim:/Status_Test/_inputs \
+sim:/Status_Test/_next \
+sim:/Status_Test/clock
+step -current
+# clock = 0, next = 0, _current = 0, _inputs = 0
+# clock = 1, next = 10, _current = 1, _inputs = 0
+# clock = 0, next = 10, _current = 11, _inputs = 0
+# clock = 1, next = 100, _current = 11, _inputs = 0
+# clock = 0, next = 100, _current = 101, _inputs = 0
+# clock = 1, next = 110, _current = 101, _inputs = 0
+# clock = 0, next = 110, _current = 111, _inputs = 0
+# clock = 1, next = 1001, _current = 111, _inputs = 0
+# clock = 0, next = 1001, _current = 1010, _inputs = 0

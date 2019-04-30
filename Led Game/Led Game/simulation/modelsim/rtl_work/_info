@@ -1,0 +1,46 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Projects\EMBEDDED\HW\Led Game\Led Game\simulation\modelsim
+vStatus
+INLTH]??O1e1;H_nG<<O483
+Vb_[`=fXdMIH=1d5VNlRXM1
+Z1 dD:\Projects\EMBEDDED\HW\Led Game\Led Game\simulation\modelsim
+w1556627054
+8D:/Projects/EMBEDDED/HW/Led Game/Led Game/Modules/Status/Status.v
+FD:/Projects/EMBEDDED/HW/Led Game/Led Game/Modules/Status/Status.v
+L0 1
+Z2 OV;L;10.1d;51
+r1
+31
+o-vlog01compat -work work -O0
+n@status
+!i10b 1
+!s100 ;5ODlh;VO1D`LZK>^dkzB0
+!s85 0
+!s108 1556631812.529000
+!s107 D:/Projects/EMBEDDED/HW/Led Game/Led Game/Modules/Status/Status.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Projects/EMBEDDED/HW/Led Game/Led Game/Modules/Status|D:/Projects/EMBEDDED/HW/Led Game/Led Game/Modules/Status/Status.v|
+!s101 -O0
+!s92 -vlog01compat -work work {+incdir+D:/Projects/EMBEDDED/HW/Led Game/Led Game/Modules/Status} -O0
+vStatus_Test
+!i10b 1
+!s100 >oF@]=oE]8dLa6:9AQg1K3
+I<lR5YYlnWAP9I9gVm1oA?1
+V_d8;]n[bN1AHW58H1U[Dc0
+R1
+w1556631754
+8D:/Projects/EMBEDDED/HW/Led Game/Led Game/Tests/Status_Test.v
+FD:/Projects/EMBEDDED/HW/Led Game/Led Game/Tests/Status_Test.v
+L0 2
+R2
+r1
+!s85 0
+31
+!s108 1556631835.400000
+!s107 D:/Projects/EMBEDDED/HW/Led Game/Led Game/Tests/Status_Test.v|
+!s90 -reportprogress|300|-work|work|D:/Projects/EMBEDDED/HW/Led Game/Led Game/Tests/Status_Test.v|
+!s101 -O0
+o-work work -O0
+n@status_@test

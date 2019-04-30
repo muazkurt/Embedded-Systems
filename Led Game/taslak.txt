@@ -1,0 +1,39 @@
+while(1)
+{
+	while(!start);
+	int level = 1, points = 0;
+	while(level < 5)
+	{
+	startLabel:
+		int count = (5 - level) << 2;
+		int led = 2^31
+		while(count > 0)
+		{
+			if(input)
+			{
+				if(input == led)
+				{
+					points = points + level;
+					++level;
+					break;
+				}
+				else
+				{
+					if(level == 1);
+					else --level;
+					goto startLabel;
+				}
+			}
+			--count;
+		}
+		if(led == 1)
+		{
+			--level;
+		}
+		else
+		{
+			led >>= 1
+		}
+
+	}
+}

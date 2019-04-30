@@ -1,0 +1,16 @@
+
+State Machine - |Status|buffer
+Name buffer.SHIFT_RIGHT buffer.TEST_LED buffer.NEG_LEVEL buffer.TEST_LVL_1 buffer.UPDATE buffer.TEST_INPUT buffer.NEG_COUNT buffer.TEST_COUNT buffer.INIT_COUNT buffer.INIT_LED buffer.TEST_LEVEL buffer.INIT buffer.0000 
+buffer.0000 0 0 0 0 0 0 0 0 0 0 0 0 0 
+buffer.INIT 0 0 0 0 0 0 0 0 0 0 0 1 1 
+buffer.TEST_LEVEL 0 0 0 0 0 0 0 0 0 0 1 0 1 
+buffer.INIT_LED 0 0 0 0 0 0 0 0 0 1 0 0 1 
+buffer.INIT_COUNT 0 0 0 0 0 0 0 0 1 0 0 0 1 
+buffer.TEST_COUNT 0 0 0 0 0 0 0 1 0 0 0 0 1 
+buffer.NEG_COUNT 0 0 0 0 0 0 1 0 0 0 0 0 1 
+buffer.TEST_INPUT 0 0 0 0 0 1 0 0 0 0 0 0 1 
+buffer.UPDATE 0 0 0 0 1 0 0 0 0 0 0 0 1 
+buffer.TEST_LVL_1 0 0 0 1 0 0 0 0 0 0 0 0 1 
+buffer.NEG_LEVEL 0 0 1 0 0 0 0 0 0 0 0 0 1 
+buffer.TEST_LED 0 1 0 0 0 0 0 0 0 0 0 0 1 
+buffer.SHIFT_RIGHT 1 0 0 0 0 0 0 0 0 0 0 0 1 

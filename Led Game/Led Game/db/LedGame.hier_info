@@ -1,0 +1,118 @@
+|Status
+led[0] <= <GND>
+led[1] <= <GND>
+led[2] <= <GND>
+led[3] <= <GND>
+led[4] <= <GND>
+led[5] <= <GND>
+led[6] <= <GND>
+led[7] <= <GND>
+led[8] <= <GND>
+led[9] <= <GND>
+point_msb[0] <= Segmenter:segment_pointMSB.port0
+point_msb[1] <= Segmenter:segment_pointMSB.port0
+point_msb[2] <= Segmenter:segment_pointMSB.port0
+point_msb[3] <= Segmenter:segment_pointMSB.port0
+point_msb[4] <= Segmenter:segment_pointMSB.port0
+point_msb[5] <= Segmenter:segment_pointMSB.port0
+point_msb[6] <= Segmenter:segment_pointMSB.port0
+point_lsb[0] <= Segmenter:segment_pointLSB.port0
+point_lsb[1] <= Segmenter:segment_pointLSB.port0
+point_lsb[2] <= Segmenter:segment_pointLSB.port0
+point_lsb[3] <= Segmenter:segment_pointLSB.port0
+point_lsb[4] <= Segmenter:segment_pointLSB.port0
+point_lsb[5] <= Segmenter:segment_pointLSB.port0
+point_lsb[6] <= Segmenter:segment_pointLSB.port0
+level_out[0] <= Segmenter:segment_level.port0
+level_out[1] <= Segmenter:segment_level.port0
+level_out[2] <= Segmenter:segment_level.port0
+level_out[3] <= Segmenter:segment_level.port0
+level_out[4] <= Segmenter:segment_level.port0
+level_out[5] <= Segmenter:segment_level.port0
+level_out[6] <= Segmenter:segment_level.port0
+splitter <= <VCC>
+start => buffer.DATAB
+start => Selector1.IN1
+switch[0] => LessThan0.IN20
+switch[0] => always1.IN1
+switch[0] => Equal2.IN19
+switch[1] => LessThan0.IN19
+switch[1] => always1.IN1
+switch[1] => Equal2.IN18
+switch[2] => LessThan0.IN18
+switch[2] => always1.IN1
+switch[2] => Equal2.IN17
+switch[3] => LessThan0.IN17
+switch[3] => always1.IN1
+switch[3] => Equal2.IN16
+switch[4] => LessThan0.IN16
+switch[4] => always1.IN1
+switch[4] => Equal2.IN15
+switch[5] => LessThan0.IN15
+switch[5] => always1.IN1
+switch[5] => Equal2.IN14
+switch[6] => LessThan0.IN14
+switch[6] => always1.IN1
+switch[6] => Equal2.IN13
+switch[7] => LessThan0.IN13
+switch[7] => always1.IN1
+switch[7] => Equal2.IN12
+switch[8] => LessThan0.IN12
+switch[8] => always1.IN0
+switch[8] => Equal2.IN11
+switch[9] => LessThan0.IN11
+switch[9] => always1.IN1
+switch[9] => Equal2.IN10
+clock => t_lvl_i.IN1
+clock => t_inp.IN1
+clock => in.IN1
+clock => t_cnt.IN1
+clock => count[1].IN1
+clock => t_lvl.IN1
+clock => point_in[0].IN1
+clock => level_in[0].IN1
+clock => buffer~1.DATAIN
+
+
+|Status|Segmenter:segment_level
+s_segment[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+s_segment[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+s_segment[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+s_segment[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+s_segment[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+s_segment[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+s_segment[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+_points[0] => Decoder0.IN3
+_points[1] => Decoder0.IN2
+_points[2] => Decoder0.IN1
+_points[3] => Decoder0.IN0
+
+
+|Status|Segmenter:segment_pointLSB
+s_segment[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+s_segment[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+s_segment[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+s_segment[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+s_segment[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+s_segment[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+s_segment[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+_points[0] => Decoder0.IN3
+_points[1] => Decoder0.IN2
+_points[2] => Decoder0.IN1
+_points[3] => Decoder0.IN0
+
+
+|Status|Segmenter:segment_pointMSB
+s_segment[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+s_segment[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+s_segment[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+s_segment[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+s_segment[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+s_segment[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+s_segment[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+_points[0] => Decoder0.IN3
+_points[1] => Decoder0.IN2
+_points[2] => Decoder0.IN1
+_points[3] => Decoder0.IN0
+
+

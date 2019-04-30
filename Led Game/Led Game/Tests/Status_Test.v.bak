@@ -1,0 +1,42 @@
+`define DELAY 20
+module Status_Test();
+wire 			_next;
+reg			clock;
+reg [3:0]	_current;
+reg [6:0]	_inputs;
+
+
+Status test (_next, _inputs, _current, clock);
+initial
+begin
+	clock 		= 1'b0;
+	_inputs		= 6'b0;
+	for(_current = 4'b0; _current < 4'b1010; _current += 1'b1)
+	begin
+		#`DELAY
+		clock = ~clock;
+		_current = _next;
+	end
+
+	
+	
+	
+end
+
+initial begin
+	 $monitor("opcode= %1b, func= %1b, branch= %1b, alu/mem= %1b, memred_en= %1b, memwrite_en = %1b, immediate_res = %1b, shift = %1b, rd_rt = %1b, regw = %1b, zeroextend = %1b, jump = %1b, slt = %1b", opcode, 
+								func, branch, 
+								alu_mem, 
+								memred_en, 
+								memwrite_en, 
+								immediate_res, 
+								shift_select, 
+								rd_rt, 
+								reg_write, 
+								zeroextend, 
+								jump, 
+								slt_select);
+								
+end
+
+endmodule
