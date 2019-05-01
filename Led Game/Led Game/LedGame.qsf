@@ -88,7 +88,6 @@ set_location_assignment PIN_J1 -to led[0]
 set_global_assignment -name VERILOG_FILE Tests/Status_Test.v
 set_global_assignment -name VERILOG_FILE Modules/Status.v
 set_global_assignment -name VERILOG_FILE Modules/Segmenter.v
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_location_assignment PIN_F13 -to level_out[6]
 set_location_assignment PIN_F12 -to level_out[5]
 set_location_assignment PIN_G12 -to level_out[4]
@@ -111,3 +110,4 @@ set_location_assignment PIN_A19 -to point_msb[2]
 set_location_assignment PIN_F15 -to point_msb[1]
 set_location_assignment PIN_B18 -to point_msb[0]
 set_location_assignment PIN_A18 -to splitter
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

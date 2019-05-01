@@ -1,5 +1,5 @@
 Analysis & Synthesis report for LedGame
-Tue Apr 30 23:10:15 2019
+Thu May 02 00:52:27 2019
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -20,6 +20,7 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
  12. Multiplexer Restructuring Statistics (Restructuring Performed)
  13. Elapsed Time Per Partition
  14. Analysis & Synthesis Messages
+ 15. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -45,15 +46,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr 30 23:10:15 2019      ;
+; Analysis & Synthesis Status        ; Successful - Thu May 02 00:52:27 2019      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; LedGame                                    ;
 ; Top-level Entity Name              ; Status                                     ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 145                                        ;
-;     Total combinational functions  ; 144                                        ;
-;     Dedicated logic registers      ; 12                                         ;
-; Total registers                    ; 12                                         ;
+; Total logic elements               ; 186                                        ;
+;     Total combinational functions  ; 186                                        ;
+;     Dedicated logic registers      ; 13                                         ;
+; Total registers                    ; 13                                         ;
 ; Total pins                         ; 44                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
@@ -175,28 +176,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 145         ;
+; Estimated Total logic elements              ; 186         ;
 ;                                             ;             ;
-; Total combinational functions               ; 144         ;
+; Total combinational functions               ; 186         ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 37          ;
-;     -- 3 input functions                    ; 49          ;
-;     -- <=2 input functions                  ; 58          ;
+;     -- 4 input functions                    ; 52          ;
+;     -- 3 input functions                    ; 68          ;
+;     -- <=2 input functions                  ; 66          ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 119         ;
-;     -- arithmetic mode                      ; 25          ;
+;     -- normal mode                          ; 166         ;
+;     -- arithmetic mode                      ; 20          ;
 ;                                             ;             ;
-; Total registers                             ; 12          ;
-;     -- Dedicated logic registers            ; 12          ;
+; Total registers                             ; 13          ;
+;     -- Dedicated logic registers            ; 13          ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 44          ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 20          ;
-; Total fan-out                               ; 498         ;
-; Average fan-out                             ; 2.04        ;
+; Maximum fan-out                             ; 24          ;
+; Total fan-out                               ; 643         ;
+; Average fan-out                             ; 2.24        ;
 +---------------------------------------------+-------------+
 
 
@@ -205,7 +206,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+--------------+
 ; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                ; Library Name ;
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+--------------+
-; |Status                         ; 144 (123)         ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 44   ; 0            ; |Status                            ; work         ;
+; |Status                         ; 186 (165)         ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 44   ; 0            ; |Status                            ; work         ;
 ;    |Segmenter:segment_level|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Status|Segmenter:segment_level    ; work         ;
 ;    |Segmenter:segment_pointLSB| ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Status|Segmenter:segment_pointLSB ; work         ;
 ;    |Segmenter:segment_pointMSB| ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Status|Segmenter:segment_pointMSB ; work         ;
@@ -240,6 +241,16 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
 +-----------------------------------------------------+---------------------+------------------------+
+; led_in[0]                                           ; led_in[9]           ; yes                    ;
+; led_in[1]                                           ; led_in[9]           ; yes                    ;
+; led_in[2]                                           ; led_in[9]           ; yes                    ;
+; led_in[3]                                           ; led_in[9]           ; yes                    ;
+; led_in[4]                                           ; led_in[9]           ; yes                    ;
+; led_in[5]                                           ; led_in[9]           ; yes                    ;
+; led_in[6]                                           ; led_in[9]           ; yes                    ;
+; led_in[7]                                           ; led_in[9]           ; yes                    ;
+; led_in[8]                                           ; led_in[9]           ; yes                    ;
+; led_in[9]                                           ; led_in[9]           ; yes                    ;
 ; point_in[4]                                         ; point_in[0]         ; yes                    ;
 ; point_in[5]                                         ; point_in[0]         ; yes                    ;
 ; point_in[6]                                         ; point_in[0]         ; yes                    ;
@@ -252,44 +263,49 @@ Encoding Type:  One-Hot
 ; level_in[1]                                         ; level_in[0]         ; yes                    ;
 ; level_in[2]                                         ; level_in[0]         ; yes                    ;
 ; level_in[3]                                         ; level_in[0]         ; yes                    ;
-; t_inp                                               ; t_inp               ; yes                    ;
-; t_lvl_i                                             ; t_lvl_i             ; yes                    ;
+; t_led                                               ; clock               ; yes                    ;
+; t_lvl                                               ; clock               ; yes                    ;
+; t_inp                                               ; clock               ; yes                    ;
+; t_lvl_i                                             ; clock               ; yes                    ;
+; t_cnt                                               ; clock               ; yes                    ;
 ; in                                                  ; in                  ; yes                    ;
-; t_cnt                                               ; t_cnt               ; yes                    ;
-; t_lvl                                               ; t_lvl               ; yes                    ;
-; count[1]                                            ; count[1]            ; yes                    ;
-; count[0]                                            ; count[1]            ; yes                    ;
-; count[3]                                            ; count[1]            ; yes                    ;
-; count[4]                                            ; count[1]            ; yes                    ;
-; count[5]                                            ; count[1]            ; yes                    ;
-; count[6]                                            ; count[1]            ; yes                    ;
-; count[7]                                            ; count[1]            ; yes                    ;
-; count[8]                                            ; count[1]            ; yes                    ;
-; count[9]                                            ; count[1]            ; yes                    ;
-; count[10]                                           ; count[1]            ; yes                    ;
-; count[11]                                           ; count[1]            ; yes                    ;
-; count[12]                                           ; count[1]            ; yes                    ;
-; count[13]                                           ; count[1]            ; yes                    ;
-; count[14]                                           ; count[1]            ; yes                    ;
-; count[15]                                           ; count[1]            ; yes                    ;
-; count[2]                                            ; count[1]            ; yes                    ;
-; Number of user-specified and inferred latches = 33  ;                     ;                        ;
+; count[0]                                            ; count[0]            ; yes                    ;
+; count[1]                                            ; count[0]            ; yes                    ;
+; count[2]                                            ; count[0]            ; yes                    ;
+; count[3]                                            ; count[0]            ; yes                    ;
+; count[4]                                            ; count[0]            ; yes                    ;
+; count[5]                                            ; count[0]            ; yes                    ;
+; count[6]                                            ; count[0]            ; yes                    ;
+; count[7]                                            ; count[0]            ; yes                    ;
+; count[8]                                            ; count[0]            ; yes                    ;
+; count[9]                                            ; count[0]            ; yes                    ;
+; count[10]                                           ; count[0]            ; yes                    ;
+; switch_old[0]                                       ; switch_old[4]       ; yes                    ;
+; switch_old[1]                                       ; switch_old[4]       ; yes                    ;
+; switch_old[2]                                       ; switch_old[4]       ; yes                    ;
+; switch_old[3]                                       ; switch_old[4]       ; yes                    ;
+; switch_old[4]                                       ; switch_old[4]       ; yes                    ;
+; switch_old[5]                                       ; switch_old[4]       ; yes                    ;
+; switch_old[6]                                       ; switch_old[4]       ; yes                    ;
+; switch_old[7]                                       ; switch_old[4]       ; yes                    ;
+; switch_old[8]                                       ; switch_old[4]       ; yes                    ;
+; switch_old[9]                                       ; switch_old[4]       ; yes                    ;
+; Number of user-specified and inferred latches = 49  ;                     ;                        ;
 +-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; buffer~2                              ; Lost fanout                            ;
-; buffer~3                              ; Lost fanout                            ;
-; buffer~4                              ; Lost fanout                            ;
-; buffer~5                              ; Lost fanout                            ;
-; buffer.SHIFT_RIGHT                    ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 5 ;                                        ;
-+---------------------------------------+----------------------------------------+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; buffer~2                              ; Lost fanout        ;
+; buffer~3                              ; Lost fanout        ;
+; buffer~4                              ; Lost fanout        ;
+; buffer~5                              ; Lost fanout        ;
+; Total Number of Removed Registers = 4 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -297,7 +313,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 12    ;
+; Total registers                              ; 13    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -331,76 +347,97 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Apr 30 23:10:13 2019
+    Info: Processing started: Thu May 02 00:52:25 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LedGame -c LedGame
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file tests/status_test.v
     Info (12023): Found entity 1: Status_Test
-Warning (10229): Verilog HDL Expression warning at Status.v(120): truncated literal to match 9 bits
 Info (12021): Found 1 design units, including 1 entities, in source file modules/status.v
     Info (12023): Found entity 1: Status
 Info (12021): Found 1 design units, including 1 entities, in source file modules/segmenter.v
     Info (12023): Found entity 1: Segmenter
 Info (12127): Elaborating entity "Status" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at Status.v(111): truncated value with size 6 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at Status.v(135): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at Status.v(144): truncated value with size 6 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at Status.v(152): truncated value with size 6 to match size of target (4)
-Warning (10240): Verilog HDL Always Construct warning at Status.v(104): inferring latch(es) for variable "level_in", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Status.v(104): inferring latch(es) for variable "point_in", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Status.v(104): inferring latch(es) for variable "t_lvl", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Status.v(104): inferring latch(es) for variable "led_in", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Status.v(104): inferring latch(es) for variable "count", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Status.v(104): inferring latch(es) for variable "t_cnt", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Status.v(104): inferring latch(es) for variable "in", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Status.v(104): inferring latch(es) for variable "t_inp", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Status.v(104): inferring latch(es) for variable "t_lvl_i", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Status.v(104): inferring latch(es) for variable "t_led", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "t_led" at Status.v(104)
-Info (10041): Inferred latch for "t_lvl_i" at Status.v(104)
-Info (10041): Inferred latch for "t_inp" at Status.v(104)
-Info (10041): Inferred latch for "in" at Status.v(104)
-Info (10041): Inferred latch for "t_cnt" at Status.v(104)
-Info (10041): Inferred latch for "count[0]" at Status.v(104)
-Info (10041): Inferred latch for "count[1]" at Status.v(104)
-Info (10041): Inferred latch for "count[2]" at Status.v(104)
-Info (10041): Inferred latch for "count[3]" at Status.v(104)
-Info (10041): Inferred latch for "count[4]" at Status.v(104)
-Info (10041): Inferred latch for "count[5]" at Status.v(104)
-Info (10041): Inferred latch for "count[6]" at Status.v(104)
-Info (10041): Inferred latch for "count[7]" at Status.v(104)
-Info (10041): Inferred latch for "count[8]" at Status.v(104)
-Info (10041): Inferred latch for "count[9]" at Status.v(104)
-Info (10041): Inferred latch for "count[10]" at Status.v(104)
-Info (10041): Inferred latch for "count[11]" at Status.v(104)
-Info (10041): Inferred latch for "count[12]" at Status.v(104)
-Info (10041): Inferred latch for "count[13]" at Status.v(104)
-Info (10041): Inferred latch for "count[14]" at Status.v(104)
-Info (10041): Inferred latch for "count[15]" at Status.v(104)
-Info (10041): Inferred latch for "led_in[0]" at Status.v(104)
-Info (10041): Inferred latch for "led_in[1]" at Status.v(104)
-Info (10041): Inferred latch for "led_in[2]" at Status.v(104)
-Info (10041): Inferred latch for "led_in[3]" at Status.v(104)
-Info (10041): Inferred latch for "led_in[4]" at Status.v(104)
-Info (10041): Inferred latch for "led_in[5]" at Status.v(104)
-Info (10041): Inferred latch for "led_in[6]" at Status.v(104)
-Info (10041): Inferred latch for "led_in[7]" at Status.v(104)
-Info (10041): Inferred latch for "led_in[8]" at Status.v(104)
-Info (10041): Inferred latch for "led_in[9]" at Status.v(104)
-Info (10041): Inferred latch for "t_lvl" at Status.v(104)
-Info (10041): Inferred latch for "point_in[0]" at Status.v(104)
-Info (10041): Inferred latch for "point_in[1]" at Status.v(104)
-Info (10041): Inferred latch for "point_in[2]" at Status.v(104)
-Info (10041): Inferred latch for "point_in[3]" at Status.v(104)
-Info (10041): Inferred latch for "point_in[4]" at Status.v(104)
-Info (10041): Inferred latch for "point_in[5]" at Status.v(104)
-Info (10041): Inferred latch for "point_in[6]" at Status.v(104)
-Info (10041): Inferred latch for "point_in[7]" at Status.v(104)
-Info (10041): Inferred latch for "level_in[0]" at Status.v(104)
-Info (10041): Inferred latch for "level_in[1]" at Status.v(104)
-Info (10041): Inferred latch for "level_in[2]" at Status.v(104)
-Info (10041): Inferred latch for "level_in[3]" at Status.v(104)
+Warning (10240): Verilog HDL Always Construct warning at Status.v(117): inferring latch(es) for variable "t_inp", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Status.v(117): inferring latch(es) for variable "t_lvl", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Status.v(117): inferring latch(es) for variable "switch_old", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Status.v(117): inferring latch(es) for variable "in", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Status.v(117): inferring latch(es) for variable "t_cnt", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Status.v(117): inferring latch(es) for variable "t_lvl_i", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Status.v(117): inferring latch(es) for variable "t_led", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Status.v(117): inferring latch(es) for variable "level_in", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Status.v(117): inferring latch(es) for variable "point_in", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Status.v(117): inferring latch(es) for variable "led_in", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Status.v(117): inferring latch(es) for variable "count", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "t_led" at Status.v(117)
+Info (10041): Inferred latch for "t_lvl_i" at Status.v(117)
+Info (10041): Inferred latch for "t_cnt" at Status.v(117)
+Info (10041): Inferred latch for "in" at Status.v(117)
+Info (10041): Inferred latch for "switch_old[0]" at Status.v(117)
+Info (10041): Inferred latch for "switch_old[1]" at Status.v(117)
+Info (10041): Inferred latch for "switch_old[2]" at Status.v(117)
+Info (10041): Inferred latch for "switch_old[3]" at Status.v(117)
+Info (10041): Inferred latch for "switch_old[4]" at Status.v(117)
+Info (10041): Inferred latch for "switch_old[5]" at Status.v(117)
+Info (10041): Inferred latch for "switch_old[6]" at Status.v(117)
+Info (10041): Inferred latch for "switch_old[7]" at Status.v(117)
+Info (10041): Inferred latch for "switch_old[8]" at Status.v(117)
+Info (10041): Inferred latch for "switch_old[9]" at Status.v(117)
+Info (10041): Inferred latch for "t_lvl" at Status.v(117)
+Info (10041): Inferred latch for "t_inp" at Status.v(117)
+Info (10041): Inferred latch for "count[0]" at Status.v(117)
+Info (10041): Inferred latch for "count[1]" at Status.v(117)
+Info (10041): Inferred latch for "count[2]" at Status.v(117)
+Info (10041): Inferred latch for "count[3]" at Status.v(117)
+Info (10041): Inferred latch for "count[4]" at Status.v(117)
+Info (10041): Inferred latch for "count[5]" at Status.v(117)
+Info (10041): Inferred latch for "count[6]" at Status.v(117)
+Info (10041): Inferred latch for "count[7]" at Status.v(117)
+Info (10041): Inferred latch for "count[8]" at Status.v(117)
+Info (10041): Inferred latch for "count[9]" at Status.v(117)
+Info (10041): Inferred latch for "count[10]" at Status.v(117)
+Info (10041): Inferred latch for "led_in[0]" at Status.v(117)
+Info (10041): Inferred latch for "led_in[1]" at Status.v(117)
+Info (10041): Inferred latch for "led_in[2]" at Status.v(117)
+Info (10041): Inferred latch for "led_in[3]" at Status.v(117)
+Info (10041): Inferred latch for "led_in[4]" at Status.v(117)
+Info (10041): Inferred latch for "led_in[5]" at Status.v(117)
+Info (10041): Inferred latch for "led_in[6]" at Status.v(117)
+Info (10041): Inferred latch for "led_in[7]" at Status.v(117)
+Info (10041): Inferred latch for "led_in[8]" at Status.v(117)
+Info (10041): Inferred latch for "led_in[9]" at Status.v(117)
+Info (10041): Inferred latch for "point_in[0]" at Status.v(117)
+Info (10041): Inferred latch for "point_in[1]" at Status.v(117)
+Info (10041): Inferred latch for "point_in[2]" at Status.v(117)
+Info (10041): Inferred latch for "point_in[3]" at Status.v(117)
+Info (10041): Inferred latch for "point_in[4]" at Status.v(117)
+Info (10041): Inferred latch for "point_in[5]" at Status.v(117)
+Info (10041): Inferred latch for "point_in[6]" at Status.v(117)
+Info (10041): Inferred latch for "point_in[7]" at Status.v(117)
+Info (10041): Inferred latch for "level_in[0]" at Status.v(117)
+Info (10041): Inferred latch for "level_in[1]" at Status.v(117)
+Info (10041): Inferred latch for "level_in[2]" at Status.v(117)
+Info (10041): Inferred latch for "level_in[3]" at Status.v(117)
 Info (12128): Elaborating entity "Segmenter" for hierarchy "Segmenter:segment_level"
+Warning (13012): Latch led_in[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.SHIFT_RIGHT
+Warning (13012): Latch led_in[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.SHIFT_RIGHT
+Warning (13012): Latch led_in[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.SHIFT_RIGHT
+Warning (13012): Latch led_in[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.SHIFT_RIGHT
+Warning (13012): Latch led_in[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.SHIFT_RIGHT
+Warning (13012): Latch led_in[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.SHIFT_RIGHT
+Warning (13012): Latch led_in[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.SHIFT_RIGHT
+Warning (13012): Latch led_in[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.SHIFT_RIGHT
+Warning (13012): Latch led_in[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.SHIFT_RIGHT
+Warning (13012): Latch led_in[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.SHIFT_RIGHT
 Warning (13012): Latch point_in[4] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.UPDATE
 Warning (13012): Latch point_in[5] has unsafe behavior
@@ -425,9 +462,13 @@ Warning (13012): Latch level_in[2] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.INIT
 Warning (13012): Latch level_in[3] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.INIT
+Warning (13012): Latch in has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.0000
+Warning (13012): Latch count[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.NEG_COUNT
 Warning (13012): Latch count[1] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.NEG_COUNT
-Warning (13012): Latch count[0] has unsafe behavior
+Warning (13012): Latch count[2] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.NEG_COUNT
 Warning (13012): Latch count[3] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.NEG_COUNT
@@ -445,42 +486,47 @@ Warning (13012): Latch count[9] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.NEG_COUNT
 Warning (13012): Latch count[10] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.NEG_COUNT
-Warning (13012): Latch count[11] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.NEG_COUNT
-Warning (13012): Latch count[12] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.NEG_COUNT
-Warning (13012): Latch count[13] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.NEG_COUNT
-Warning (13012): Latch count[14] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.NEG_COUNT
-Warning (13012): Latch count[15] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.NEG_COUNT
-Warning (13012): Latch count[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal buffer.NEG_COUNT
+Warning (13012): Latch switch_old[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal switch[0]
+Warning (13012): Latch switch_old[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal switch[1]
+Warning (13012): Latch switch_old[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal switch[2]
+Warning (13012): Latch switch_old[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal switch[3]
+Warning (13012): Latch switch_old[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal switch[4]
+Warning (13012): Latch switch_old[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal switch[5]
+Warning (13012): Latch switch_old[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal switch[6]
+Warning (13012): Latch switch_old[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal switch[7]
+Warning (13012): Latch switch_old[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal switch[8]
+Warning (13012): Latch switch_old[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal switch[9]
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "led[0]" is stuck at GND
-    Warning (13410): Pin "led[1]" is stuck at GND
-    Warning (13410): Pin "led[2]" is stuck at GND
-    Warning (13410): Pin "led[3]" is stuck at GND
-    Warning (13410): Pin "led[4]" is stuck at GND
-    Warning (13410): Pin "led[5]" is stuck at GND
-    Warning (13410): Pin "led[6]" is stuck at GND
-    Warning (13410): Pin "led[7]" is stuck at GND
-    Warning (13410): Pin "led[8]" is stuck at GND
-    Warning (13410): Pin "led[9]" is stuck at GND
     Warning (13410): Pin "splitter" is stuck at VCC
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file D:/Projects/EMBEDDED/HW/Led Game/Led Game/output_files/LedGame.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 189 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 230 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 145 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 84 warnings
+    Info (21061): Implemented 186 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 102 warnings
     Info: Peak virtual memory: 4643 megabytes
-    Info: Processing ended: Tue Apr 30 23:10:15 2019
+    Info: Processing ended: Thu May 02 00:52:27 2019
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/Projects/EMBEDDED/HW/Led Game/Led Game/output_files/LedGame.map.smsg.
 
 

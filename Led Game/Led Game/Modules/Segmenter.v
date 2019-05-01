@@ -18,19 +18,19 @@ module Segmenter(output reg	[6:0] s_segment,
 					hex_e				= 7'b0000110,
 					hex_f				= 7'b0001110;
 					
-	always
+	always @( * )
 	begin
 		case (_points)
-			4'd0:	s_segment = hex_o;
-			4'd1:	s_segment = hex_i;
-			4'd2:	s_segment = hex_ii;
-			4'd3:	s_segment = hex_iii;
-			4'd4:	s_segment = hex_iv;
-			4'd5:	s_segment = hex_v;
-			4'd6:	s_segment = hex_vi;
-			4'd7:	s_segment = hex_vii;
-			4'd8:	s_segment = hex_viii;
-			4'd9:	s_segment = hex_ix;
+			4'd0:		s_segment = hex_o;
+			4'd1:		s_segment = hex_i;
+			4'd2:		s_segment = hex_ii;
+			4'd3:		s_segment = hex_iii;
+			4'd4:		s_segment = hex_iv;
+			4'd5:		s_segment = hex_v;
+			4'd6:		s_segment = hex_vi;
+			4'd7:		s_segment = hex_vii;
+			4'd8:		s_segment = hex_viii;
+			4'd9:		s_segment = hex_ix;
 			4'd10:	s_segment = hex_a;
 			4'd11:	s_segment = hex_b;
 			4'd12:	s_segment = hex_c;
