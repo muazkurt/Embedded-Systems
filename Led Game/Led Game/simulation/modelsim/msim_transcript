@@ -20,3 +20,67 @@
 # Top level modules:
 # 	Segmenter
 # 
+vlog -reportprogress 300 -work work {D:/Projects/EMBEDDED/HW/Led Game/Led Game/Tests/Status_Test.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Status_Test
+# 
+# Top level modules:
+# 	Status_Test
+vsim work.Status_Test
+# vsim work.Status_Test 
+# Loading work.Status_Test
+# Loading work.Status
+# Loading work.Segmenter
+vsim work.Status_Test
+# vsim work.Status_Test 
+# Loading work.Status_Test
+# Loading work.Status
+# Loading work.Segmenter
+add wave -position insertpoint  \
+sim:/Status_Test/test/clock \
+sim:/Status_Test/test/reset \
+sim:/Status_Test/test/start \
+sim:/Status_Test/test/switch \
+sim:/Status_Test/test/led \
+sim:/Status_Test/test/level_out \
+sim:/Status_Test/test/point_lsb \
+sim:/Status_Test/test/point_msb \
+sim:/Status_Test/test/splitter \
+sim:/Status_Test/test/IDLE \
+sim:/Status_Test/test/INIT \
+sim:/Status_Test/test/INIT_COUNT \
+sim:/Status_Test/test/INIT_LED \
+sim:/Status_Test/test/NEG_COUNT \
+sim:/Status_Test/test/NEG_LEVEL \
+sim:/Status_Test/test/SHIFT_RIGHT \
+sim:/Status_Test/test/TEST_COUNT \
+sim:/Status_Test/test/TEST_INPUT \
+sim:/Status_Test/test/TEST_LED \
+sim:/Status_Test/test/TEST_LEVEL \
+sim:/Status_Test/test/TEST_LVL_1 \
+sim:/Status_Test/test/UPDATE \
+sim:/Status_Test/test/_current \
+sim:/Status_Test/test/buffer \
+sim:/Status_Test/test/count \
+sim:/Status_Test/test/in \
+sim:/Status_Test/test/led_in \
+sim:/Status_Test/test/level_in \
+sim:/Status_Test/test/point_in \
+sim:/Status_Test/test/t_cnt \
+sim:/Status_Test/test/t_inp \
+sim:/Status_Test/test/t_led \
+sim:/Status_Test/test/t_lvl \
+sim:/Status_Test/test/t_lvl_i
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: MSI  Hostname: HALILULLAH  ProcessID: 7524
+# 
+#           Attempting to use alternate WLF file "./wlftqiix0a".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftqiix0a
+# 
+step -current
+# WARNING: No extended dataflow license exists
+# Break key hit 
+# Simulation stop requested.

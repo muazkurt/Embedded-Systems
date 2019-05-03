@@ -4,8 +4,6 @@ K3
 cModel Technology
 Z0 dD:\Projects\EMBEDDED\HW\Led Game\Led Game\simulation\modelsim
 vSegmenter
-!i10b 1
-!s100 zG1AzRn004Z_hHMi9ARBV3
 IlK^PIQ@lePAeGI]62X3Y52
 V^bnOeL=RXYWOj3OBNJgKV1
 Z1 dD:\Projects\EMBEDDED\HW\Led Game\Led Game\simulation\modelsim
@@ -15,20 +13,22 @@ FD:/Projects/EMBEDDED/HW/Led Game/Led Game/Modules/Segmenter.v
 L0 1
 Z2 OV;L;10.1d;51
 r1
-!s85 0
 31
-!s108 1556840245.965000
-!s107 D:/Projects/EMBEDDED/HW/Led Game/Led Game/Modules/Segmenter.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Projects/EMBEDDED/HW/Led Game/Led Game/Modules|D:/Projects/EMBEDDED/HW/Led Game/Led Game/Modules/Segmenter.v|
-!s101 -O0
 Z3 o-vlog01compat -work work -O0
 Z4 !s92 -vlog01compat -work work {+incdir+D:/Projects/EMBEDDED/HW/Led Game/Led Game/Modules} -O0
 n@segmenter
+!i10b 1
+!s100 zG1AzRn004Z_hHMi9ARBV3
+!s85 0
+!s108 1556918963.966000
+!s107 D:/Projects/EMBEDDED/HW/Led Game/Led Game/Modules/Segmenter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Projects/EMBEDDED/HW/Led Game/Led Game/Modules|D:/Projects/EMBEDDED/HW/Led Game/Led Game/Modules/Segmenter.v|
+!s101 -O0
 vStatus
-IAY4U;TdN?FMACf;T7oli:3
-V`Mg`l1R;a5IUhZcY2n>`C1
+I6Mz=nTW5OlO;mKU5KS7aB3
+VKML[8QFT<A4@EPfSJHa?j2
 R1
-w1556840202
+w1556918604
 8D:/Projects/EMBEDDED/HW/Led Game/Led Game/Modules/Status.v
 FD:/Projects/EMBEDDED/HW/Led Game/Led Game/Modules/Status.v
 L0 1
@@ -37,11 +37,31 @@ r1
 31
 R3
 n@status
+R4
 !i10b 1
-!s100 `;D_O6XO:V`a=]3P94gHz1
+!s100 =LbQ>48Dm6KonJ_LSBSTF1
 !s85 0
-!s108 1556840245.800000
+!s108 1556918963.833000
 !s107 D:/Projects/EMBEDDED/HW/Led Game/Led Game/Modules/Status.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Projects/EMBEDDED/HW/Led Game/Led Game/Modules|D:/Projects/EMBEDDED/HW/Led Game/Led Game/Modules/Status.v|
 !s101 -O0
-R4
+vStatus_Test
+!i10b 1
+!s100 EHBE`l[b=:DTnaBIR4WhL3
+I6KPQjP6a<MU2hMmShjLc:3
+V_d8;]n[bN1AHW58H1U[Dc0
+R1
+w1556918915
+8D:/Projects/EMBEDDED/HW/Led Game/Led Game/Tests/Status_Test.v
+FD:/Projects/EMBEDDED/HW/Led Game/Led Game/Tests/Status_Test.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1556918983.656000
+!s107 D:/Projects/EMBEDDED/HW/Led Game/Led Game/Tests/Status_Test.v|
+!s90 -reportprogress|300|-work|work|D:/Projects/EMBEDDED/HW/Led Game/Led Game/Tests/Status_Test.v|
+!s101 -O0
+o-work work -O0
+n@status_@test
