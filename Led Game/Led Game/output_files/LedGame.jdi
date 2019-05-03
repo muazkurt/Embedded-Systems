@@ -1,8 +1,8 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="6e01df1b2279e193ff5c"/>
+    <hash md5_digest_80b="5fac8910401c26cf5e99"/>
   </project>
   <file_info>
-    <file device="EP3C16U484C6" path="LedGame.sof" usercode="0xFFFFFFFF"/>
+    <file device="EP3C16F484C6" path="LedGame.sof" usercode="0xFFFFFFFF"/>
   </file_info>
 </sld_project_info>

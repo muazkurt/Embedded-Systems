@@ -1,4 +1,4 @@
-module Status(output [9:0] led, output [6:0] point_msb, output [6:0] point_lsb, output [6:0] level_out, output splitter, input start, input [9:0] switch, input clock);
+module Status(output [9:0] led, output [6:0] point_msb, output [6:0] point_lsb, output [6:0] level_out, output splitter, input start, input reset, input [9:0] switch, input clock);
 	wire	 		[3:0] _current;
 	reg					in,
 							t_lvl,
@@ -9,9 +9,8 @@ module Status(output [9:0] led, output [6:0] point_msb, output [6:0] point_lsb, 
 	reg			[3:0] buffer,
 							level_in;
 	reg			[7:0] point_in;
-	reg			[9:0] led_in,
-							switch_old;
-	reg			[10:0] count;
+	reg			[9:0] led_in;
+	reg			[20:0] count;
 	
 	
 	localparam	IDLE 				= 4'D0,
@@ -31,7 +30,7 @@ module Status(output [9:0] led, output [6:0] point_msb, output [6:0] point_lsb, 
 					
 	assign _current = buffer;			
 	assign led = led_in;
-	assign splitter = 1'b1;
+	assign splitter = 1'b0;
 	
 	initial 
 	begin
@@ -45,66 +44,104 @@ module Status(output [9:0] led, output [6:0] point_msb, output [6:0] point_lsb, 
 		case(_current) 
 			IDLE:
 			begin
-				if(start == 1'b0) 
+				if(start == 1'b1) 
 						buffer = IDLE;
 				else	buffer = INIT;
 			end
 			INIT: 
-						buffer = TEST_LEVEL;
+				if(reset == 1'b0) 
+					buffer = IDLE;
+				else
+				buffer = TEST_LEVEL;
 			
 			TEST_LEVEL: 
 			begin
-				if(t_lvl == 1'b0)
-						buffer = INIT_LED;
-				else 	buffer = IDLE;
+				if(reset == 1'b0) 
+					buffer = IDLE;
+				else
+					if (in == 1'b1)
+							buffer = TEST_LEVEL;
+					else
+						if(t_lvl == 1'b0)
+							buffer = INIT_LED;
+						else 
+						buffer = IDLE;
 			end
 			INIT_LED:	
+				if(reset == 1'b0) 
+					buffer = IDLE;
+				else
 						buffer = INIT_COUNT;
 			
 			INIT_COUNT: 
+				if(reset == 1'b0) 
+					buffer = IDLE;
+				else
 							buffer = TEST_COUNT;
 			
 			TEST_COUNT: 
 			begin
-				if(t_cnt == 1'b0) 
-				begin
+				if(reset == 1'b0) 
+					buffer = IDLE;
+				else
 					if (in == 1'b0)
-						buffer = NEG_COUNT;
-					else	
-						buffer = TEST_INPUT;
-				end 
-				else		buffer = TEST_LED;
+						if(t_cnt == 1'b0) 
+							buffer = NEG_COUNT;
+						else
+							buffer = TEST_LED;
+					else	buffer = TEST_INPUT;
 			end
 			NEG_COUNT:	
+				if(reset == 1'b0) 
+					buffer = IDLE;
+				else
 							buffer = TEST_COUNT;
 							
 			TEST_INPUT:
 			begin
-				if(t_inp == 1'b0)
-							buffer = TEST_LVL_1;
-				else		buffer = UPDATE;
+				if(reset == 1'b0) 
+					buffer = IDLE;
+				else
+					if(t_inp == 1'b0)
+								buffer = TEST_LVL_1;
+					else		buffer = UPDATE;
 			end
 			UPDATE:
+				if(reset == 1'b0) 
+					buffer = IDLE;
+				else
 							buffer = TEST_LEVEL;
 							
 			TEST_LVL_1:
 			begin
-				if(t_lvl_i == 1'b0)
-							buffer = NEG_LEVEL;
+				if(reset == 1'b0) 
+					buffer = IDLE;
 				else
-							buffer = TEST_LEVEL;
+					if(t_lvl_i == 1'b0)
+								buffer = NEG_LEVEL;
+					else
+								buffer = TEST_LEVEL;
 			end		
 			NEG_LEVEL:	
+				if(reset == 1'b0) 
+					buffer = IDLE;
+				else
 							buffer = TEST_LEVEL;
 							
 			TEST_LED:
 			begin
-				if(t_led == 1'b1)	
-							buffer = TEST_LVL_1;
+				if(reset == 1'b0) 
+					buffer = IDLE;
 				else
-							buffer = SHIFT_RIGHT;
+					if(t_led == 1'b1)	
+								buffer = TEST_LVL_1;
+					else
+								buffer = SHIFT_RIGHT;
 			end		
 			SHIFT_RIGHT:
+				if(reset == 1'b0) 
+					buffer = IDLE;
+				else
 							buffer = INIT_COUNT;
 							
 			default: 
@@ -116,49 +153,31 @@ module Status(output [9:0] led, output [6:0] point_msb, output [6:0] point_lsb, 
 	always @( * )
 	if(clock == 1'b0)
 		begin
-			if(in == 1'b1 && switch == led_in)
-				t_inp <= 1'b1;
-			else
-				t_inp <= 1'b0;
+			t_inp = 1'b0;
+			t_lvl = 1'b0;
+			in = 1'b0;
+			t_cnt = 1'b0;
+			t_lvl_i = 1'b0;
+			t_led = 1'b0;
+			if(switch == led_in)
+				t_inp = 1'b1;
 			if(level_in == 4'b1111)
-				t_lvl <= 1'b1;
-			else
-				t_lvl <= 1'b0;
-			if(switch != switch_old)
-			begin
-				switch_old <= switch;
-				if(switch > 10'd0)
-					in <= 1'b1;
-				else
-					in <= 1'b0;
-			end
-			if(count == 1'b0 && in == 1'b0)
-				t_cnt <= 1'b1;
-			else
-				t_cnt <= 1'b0;
+				t_lvl = 1'b1;
+			if((switch[9] ^ switch[8] ^ switch[7] ^ switch[6] ^ switch[5] ^ switch[4] ^ switch[3] ^ switch[2] ^ switch[1] ^ switch[0]) == 1'b1)
+				in = 1'b1;
+			if(count == 1'b0)
+				t_cnt = 1'b1;
 			if(level_in == 4'b0)
-				t_lvl_i <= 1'b1;
-			else
-				t_lvl_i <= 1'b0;
-			if(led_in == 10'd1)
-				t_led <= 1'b1;
-			else
-				t_led <= 1'b0;
+				t_lvl_i = 1'b1;
+			if(led_in == 1)
+				t_led = 1'b1;
 			case (_current)
 				IDLE: 
-				begin
-							in 		<= 0;
-							t_lvl		<= 0;
-							t_lvl_i	<= 0;
-							t_inp		<= 0;
-							t_cnt		<= 0;
-							t_led		<= 0;
-				end
+					;
 				INIT:
 				begin
 					level_in		= 4'b0;
 					point_in		= 8'b0;
-					switch_old	<= 10'b0;
 				end
 				TEST_LEVEL:
 				;
@@ -166,7 +185,7 @@ module Status(output [9:0] led, output [6:0] point_msb, output [6:0] point_lsb, 
 					led_in 		= 10'b1000000000;
 				INIT_COUNT:
 				begin
-					count 		= (4'b1110 - level_in) << 6;
+					count 		= 20'D20000;//((4'b1110 - level_in) + 1) << 6;
 				end 
 				TEST_COUNT:
 				;
@@ -190,8 +209,8 @@ module Status(output [9:0] led, output [6:0] point_msb, output [6:0] point_lsb, 
 				default:
 				;
 			endcase
-	end
 	
+		end
 	Segmenter segment_level		(level_out, level_in);
 	Segmenter segment_pointLSB (point_lsb, point_in[3:0]);
 	Segmenter segment_pointMSB (point_msb, point_in[7:4]);

@@ -17,12 +17,14 @@ begin
 	clock 		= 1'b0;
 	switch		= 9'b0;
 	start	= 1'b1;
-	for(i = 0; i < 16'b0000001000; i = i + 1)
+	for(i = 0; i < 16'b000010000000; i = i + 1)
 	begin
 		#`DELAY
 		clock = ~clock;
 		#`DELAY
 		clock = ~clock;
+		$monitor("i = %1d, count = %1d, led = %d, point_msb = %1h, point_lsb = %1h, level_out = %1b",
+				i, test.count, led, point_msb, point_lsb, level_out);
 	end
 	
 	start = 1'b0;
@@ -34,11 +36,11 @@ begin
 		#`DELAY
 		clock = ~clock;
 		$monitor("i = %1d, count = %1d, led = %d, point_msb = %1h, point_lsb = %1h, level_out = %1b",
-				i, test.count, led, point_msb, point_lsb, level_out);
-		if(led == 10'b1000)
+				i, test.count, led, point_msb, point_lsb, test.level_in);
+		if(test._current == 4'd5)
 			switch = led;
-		if(led == 10'b10)
-			switch = led;
+		if(test._current == 4'D2)
+			switch = 0;
 		
 	end
 	
